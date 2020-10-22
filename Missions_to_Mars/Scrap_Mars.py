@@ -158,7 +158,7 @@ def scrape():
 
     fact_df = tables[0]
     fact_df.columns = ["Description", "value"]
-    fact_df.set_index("Description", inplace=True)
+    mars_table = fact_df.set_index("Description", inplace=True)
 
 
     # In[67]:
@@ -249,7 +249,7 @@ def scrape():
         "news_title": title, 
         "news_p": paragraph,
         "image": featured_image_url,
-        "mars_df": fact_df,
+        "mars_df": mars_table,
         "mars_hem": hemurl
     }
 
