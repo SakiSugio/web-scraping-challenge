@@ -144,27 +144,13 @@ def scrape():
 
 
     url = 'https://space-facts.com/mars/'
-
-
-    # In[65]:
-
-
     tables = pd.read_html(url)
     tables
-
-
-    # In[66]:
-
-
     fact_df = tables[0]
     fact_df.columns = ["Description", "value"]
-    mars_table = fact_df.set_index("Description", inplace=True)
-
-
+    fact_df.set_index("Description", inplace=True)
     # In[67]:
-
-
-    fact_df.to_html(classes = "table table-striped")
+    html_table = fact_df.to_html(classes = "table table-striped")
 
 
     # In[68]:
@@ -249,7 +235,7 @@ def scrape():
         "news_title": title, 
         "news_p": paragraph,
         "image": featured_image_url,
-        "mars_df": mars_table,
+        "mars_df": html_table,
         "mars_hem": hemurl
     }
 
