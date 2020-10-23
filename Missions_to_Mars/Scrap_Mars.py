@@ -153,48 +153,6 @@ def scrape():
     html_table = fact_df.to_html(classes = "table table-striped")
 
 
-    # In[68]:
-
-
-    #print(fact_df)
-
-
-    # ## Mars Hemispheres
-
-    # In[83]:
-
-
-    # hemurl = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
-    # browser.visit(url)
-
-
-    # # In[84]:
-
-
-    # html = browser.html
-    # hemsoup = BeautifulSoup(html, "html.parser")
-    # item = hemsoup.find("div", class_="item")
-    # item
-
-
-    # # In[85]:
-
-
-    # # hem = []
-    # # for image in item:
-    # #     imageurl = item.find_all("a")["href"]
-    # #     title = item.find("div", class_="description").find("a").find("h3").text
-    # #     image_url = "https://astrogeology.usgs.gov" + imageurl
-    # #     browser.visit(image_url)
-    # #     html = browser.html
-    # #     imagesoup = BeautifulSoup(html, "html.parser")
-    # #     finalimage = imagesoup.find("div", class_="downloads").find("ul").find("li").find("a")["href"]
-    # #     hem.append({"title": title, "img_url": finalimage})
-    # # hem
-
-
-    # # In[91]:
-
 
     hemurl = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     response = requests.get(hemurl)
